@@ -2,18 +2,28 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ApiController;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+//Register
+Route::post("register",[ApiController::class,"register"]);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+//Login
+Route::post("login",[ApiController::class,"login"]);
+
+//profile
+Route::group([
+    "middleware" => ["auth:sanctum"]
+],function(){
+    Route::get("profile",[ApiController::class,"profile"]);
+
+    Route::put("editProfile",[ApiController::class, "editProfile"]);
+
+    Route::delete("deleteProfile",[ApiController::class, "deleteProfile"]);
+    
+    Route::post("logout",[ApiController::class,"logout"]);
 });
+
+// Catch-all route for Vue Router
+Route::get('/{any}', function () {
+    return view('welcome'); 
+})->where('any', '.*');
