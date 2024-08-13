@@ -1,3 +1,53 @@
-<p>
-  login works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Home </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" style="display: flex; justify-content: center">
+        Login to continue..
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <div class="img-container">
+      <img src="../../../assets/login.png" />
+    </div>
+
+    <form class="reg-form" (ngSubmit)="submitLogin()">
+      <div>
+        <ion-input
+          type="email"
+          fill="solid"
+          label="Email"
+          labelPlacement="floating"
+          helperText="Enter a valid email"
+          errorText="Invalid email"
+          ngModel="email"
+          name="email"
+          required
+        ></ion-input>
+        <ion-input
+          type="password"
+          fill="solid"
+          label="Password"
+          labelPlacement="floating"
+          helperText="Enter password"
+          errorText="Invalid password"
+          ngModel="password"
+          name="password"
+          required
+        ></ion-input>
+      </div>
+      <div class="button-group">
+        <button type="submit" class="btn btn-dark">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</ion-content>

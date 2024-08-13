@@ -1,20 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Home </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large" style="display: flex; justify-content: center;">EPIT</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="img-container">
+      <img src="../../../assets/boy.png" />
+    </div>
+    <div class="button-group">
+      <button type="button" class="btn btn-light" routerLink="/login">Login</button>
+      <button type="button" class="btn btn-dark" routerLink="/register">Signup</button>
+    </div>
   </div>
 </ion-content>

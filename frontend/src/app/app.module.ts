@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HomePage } from './components/home/home.page';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { HomePage } from './components/home/home.page';
     HomePage,
     RegisterComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgbModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
