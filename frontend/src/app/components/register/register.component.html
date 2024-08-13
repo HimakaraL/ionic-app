@@ -14,7 +14,7 @@
     </ion-header>
   
     <div id="container">
-      <form class="reg-form" (ngSubmit)="handleRegister()">
+      <form class="reg-form">
         <div>
           <ion-input
             type="text"
@@ -23,7 +23,7 @@
             labelPlacement="floating"
             helperText="Enter a name"
             errorText="Invalid"
-            ngModel="first_name"
+            ngModel="form.first_name"
             name="first_name"
             required
           ></ion-input>
@@ -34,7 +34,7 @@
             labelPlacement="floating"
             helperText="Enter a valid name"
             errorText="Invalid"
-            ngModel="last_name"
+            ngModel="form.last_name"
             name="last_name"
             required
           ></ion-input>
@@ -45,7 +45,7 @@
             labelPlacement="floating"
             helperText="Enter a valid email"
             errorText="Invalid email"
-            ngModel="email"
+            ngModel="form.email"
             name="email"
             required
           ></ion-input>
@@ -56,7 +56,7 @@
             labelPlacement="floating"
             helperText="Enter password"
             errorText="Invalid password"
-            ngModel="password"
+            ngModel="form.password"
             name="password"
             required
           ></ion-input>
@@ -67,7 +67,7 @@
             labelPlacement="floating"
             helperText="Enter Married/Single"
             errorText="Invalid"
-            ngModel="status"
+            ngModel="form.status"
             name="status"
             required
           ></ion-input>
@@ -78,13 +78,13 @@
             labelPlacement="floating"
             helperText="Enter a Phone no"
             errorText="Invalid"
-            ngModel="phone_no"
+            ngModel="form.phone_no"
             name="phone_no"
             required
           ></ion-input>
         </div>
         <div class="button-group">
-          <button type="submit" class="btn btn-dark">
+          <button type="submit" (ngSubmit)="handleRegister()" class="btn btn-dark">
             Register
           </button>
         </div>
