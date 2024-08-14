@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import axios from 'axios';
+import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,31 +8,39 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent  implements OnInit {
-  public form={
-    first_name: null,
-    last_name: null,
-    email: null,
-    password: null,
-    status: null,
-    phone_no: null
-  }
+export class RegisterComponent implements OnInit {
+  regForm!: FormGroup;
 
   private URL = 'http://127.0.0.1:8000/api/register';
 
-  constructor(private router: Router) { }
+  constructor(
+    private http: HttpClient,
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.regForm = this.formBuilder.group({
+      first_name: null,
+      last_name: null,
+      email: null,
+      password: null,
+      status: null,
+      phone_no: null,
+    });
+  }
 
-  async handleRegister(){
-    try {
-      const response = await axios.post(this.URL, this.form);
-      console.log(this.form);
-      console.log(response.data);
-      // this.router.navigate(['/']);
-    } catch (error) {
-      console.log(error);
-    }
-    
+  handleRegister() {
+    this.http.post(this.URL, this.regForm.value).subscribe(
+      (response) => {
+        console.log(this.regForm);
+        console.log('Registration successful', response);
+        alert('Success register');
+        this.router.navigate(['/']); // Redirect to home after registration
+      },
+      (error) => {
+        console.error('Error occurred during registration', error);
+      }
+    );
   }
 }

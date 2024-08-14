@@ -14,7 +14,7 @@
     </ion-header>
   
     <div id="container">
-      <form class="reg-form">
+      <form class="reg-form" [formGroup]="regForm" (ngSubmit)="handleRegister()">
         <div>
           <ion-input
             type="text"
@@ -23,7 +23,7 @@
             labelPlacement="floating"
             helperText="Enter a name"
             errorText="Invalid"
-            ngModel="form.first_name"
+            formControlName="first_name"
             name="first_name"
             required
           ></ion-input>
@@ -34,7 +34,7 @@
             labelPlacement="floating"
             helperText="Enter a valid name"
             errorText="Invalid"
-            ngModel="form.last_name"
+            formControlName="last_name"
             name="last_name"
             required
           ></ion-input>
@@ -45,7 +45,7 @@
             labelPlacement="floating"
             helperText="Enter a valid email"
             errorText="Invalid email"
-            ngModel="form.email"
+            formControlName="email"
             name="email"
             required
           ></ion-input>
@@ -56,7 +56,7 @@
             labelPlacement="floating"
             helperText="Enter password"
             errorText="Invalid password"
-            ngModel="form.password"
+            formControlName="password"
             name="password"
             required
           ></ion-input>
@@ -67,7 +67,7 @@
             labelPlacement="floating"
             helperText="Enter Married/Single"
             errorText="Invalid"
-            ngModel="form.status"
+            formControlName="status"
             name="status"
             required
           ></ion-input>
@@ -78,13 +78,13 @@
             labelPlacement="floating"
             helperText="Enter a Phone no"
             errorText="Invalid"
-            ngModel="form.phone_no"
+            formControlName="phone_no"
             name="phone_no"
             required
           ></ion-input>
         </div>
         <div class="button-group">
-          <button type="submit" (ngSubmit)="handleRegister()" class="btn btn-dark">
+          <button type="submit" class="btn btn-dark">
             Register
           </button>
         </div>

@@ -12,7 +12,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HomePage } from './components/home/home.page';
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';  // <-- use provideHttpClient
 
 @NgModule({
   declarations: [
@@ -22,8 +24,18 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     ProfileComponent,
   ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgbModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    provideHttpClient(),  
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
