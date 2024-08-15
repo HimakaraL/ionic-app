@@ -1,13 +1,39 @@
 <ion-menu contentId="main-content" class="menu">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Profile Menu</ion-title>
+      <ion-title><h2>Menu</h2></ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
     <div class="action-btn-group">
-      <ion-button shape="round" expand="full" color="dark" routerLink="/editProfile">Edit Profile</ion-button>
-      <ion-button shape="round" expand="full" color="dark" routerLink="/login">Logout</ion-button>
+      <ion-button
+      class="ion-btn"
+        shape="round"
+        expand="full"
+        fill="clear"
+        color="dark"
+        (click)="setOption('profile')"
+        ><h3>Info</h3></ion-button
+      >
+      <ion-button
+      class="ion-btn"
+        shape="round"
+        expand="full"
+        fill="clear"
+        color="dark"
+        (click)="setOption('edit')"
+        ><h3>Manage</h3></ion-button
+      >
+      <ion-button
+      class="ion-btn"
+        id="logout-btn"
+        shape="round"
+        fill="clear"
+        expand="full"
+        color="dark"
+        (click)="presentLogoutAlert()"
+        ><h3>Logout</h3></ion-button
+      >
     </div>
   </ion-content>
 </ion-menu>
@@ -15,61 +41,166 @@
 <div class="ion-page" id="main-content">
   <ion-content class="ion-padding">
     <ion-menu-toggle>
-      <ion-button color="medium" class="menu-btn">
-        <ion-icon name="menu"></ion-icon>
+      <ion-button color="medium" class="menu-btn" size="large">
+        <ion-icon name="menu" size="large"></ion-icon>
       </ion-button>
     </ion-menu-toggle>
-    <div class="container">
-      <div class="card mb-4">
-        <div class="card-header">
+
+    <div *ngIf="selectedOption === 'profile'">
+      <div class="container">
+        <div class="img-container">
           <img src="../../../assets/user.png" alt="user" />
         </div>
-        <div class="card-body">
-          <div class="row mb-3">
-            <div class="col-sm-3">
-              <p class="font-weight-bold">Full Name</p>
-            </div>
-            <div class="col-sm-9">
-              <div class="display-value">
-                {{ userProfile?.first_name }} {{ userProfile?.last_name }}
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <p class="font-weight-bold">Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <div class="display-value">
+                  {{ userProfile?.first_name }} {{ userProfile?.last_name }}
+                </div>
               </div>
             </div>
-          </div>
-          <hr />
-          <div class="row mb-3">
-            <div class="col-sm-3">
-              <p class="font-weight-bold">Email</p>
-            </div>
-            <div class="col-sm-9">
-              <div class="display-value">
-                {{ userProfile?.email }}
+            <hr />
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <p class="font-weight-bold">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <div class="display-value">
+                  {{ userProfile?.email }}
+                </div>
               </div>
             </div>
-          </div>
-          <hr />
-          <div class="row mb-3">
-            <div class="col-sm-3">
-              <p class="font-weight-bold">Status</p>
-            </div>
-            <div class="col-sm-9">
-              <div class="display-value">
-                {{ userProfile?.status }}
+            <hr />
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <p class="font-weight-bold">Status</p>
+              </div>
+              <div class="col-sm-9">
+                <div class="display-value">
+                  {{ userProfile?.status }}
+                </div>
               </div>
             </div>
-          </div>
-          <hr />
-          <div class="row mb-3">
-            <div class="col-sm-3">
-              <p class="font-weight-bold">Mobile</p>
-            </div>
-            <div class="col-sm-9">
-              <div class="display-value">
-                {{ userProfile?.phone_no }}
+            <hr />
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <p class="font-weight-bold">Mobile</p>
+              </div>
+              <div class="col-sm-9">
+                <div class="display-value">
+                  {{ userProfile?.phone_no }}
+                </div>
               </div>
             </div>
+            <hr />
           </div>
-          <hr />
         </div>
+      </div>
+    </div>
+
+    <div *ngIf="selectedOption === 'edit'">
+      <div style="display: flex; justify-content: center;">
+        <h1>Customize Your Profile</h1>
+      </div>
+      <div class="container">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <p class="font-weight-bold">Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="userProfile.first_name"
+                  placeholder="First Name"
+                  name="first_name"
+                />
+                <input
+                  type="text"
+                  class="form-control mt-2"
+                  [(ngModel)]="userProfile.last_name"
+                  placeholder="Last Name"
+                  name="last_name"
+                />
+              </div>
+            </div>
+            <hr />
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <p class="font-weight-bold">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <input
+                  type="email"
+                  class="form-control"
+                  [(ngModel)]="userProfile.email"
+                  placeholder="Email"
+                  name="email"
+                />
+              </div>
+            </div>
+            <hr />
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <p class="font-weight-bold">Status</p>
+              </div>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="userProfile.status"
+                  placeholder="Status"
+                  name="status"
+                />
+              </div>
+            </div>
+            <hr />
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <p class="font-weight-bold">Mobile</p>
+              </div>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="userProfile.phone_no"
+                  placeholder="Mobile Number"
+                  name="phone_no"
+                />
+              </div>
+            </div>
+            <hr />
+
+            <div class="row">
+              <div style="display: flex; justify-content: center">
+                <ion-button
+                style="width: 35%"
+                  shape="round"
+                  expand="full"
+                  color="warning"
+                  (click)="saveProfile()"
+                  >Save</ion-button
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <ion-button
+          style="width: 35%"
+          shape="round"
+          expand="full"
+          color="danger"
+          (click)="presentDeleteAlert()"
+          >Delete Profile</ion-button
+        >
       </div>
     </div>
   </ion-content>

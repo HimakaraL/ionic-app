@@ -12,7 +12,6 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HomePage } from './components/home/home.page';
-import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';  // <-- use provideHttpClient
@@ -24,7 +23,6 @@ import { provideHttpClient } from '@angular/common/http';  // <-- use provideHtt
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    EditProfileComponent
   ],
   imports: [
     BrowserModule,

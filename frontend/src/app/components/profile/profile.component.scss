@@ -1,5 +1,6 @@
 .menu-btn{
-    margin-bottom: 15%;
+    margin-bottom: 5%;
+    width: 18%;
 }
 
 .card-header{
@@ -8,12 +9,16 @@
 }
 
 img{
-    max-width: 50%;
+    max-width: 40%;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   
   .card {
@@ -41,7 +46,6 @@ img{
     font-size: 1rem;
   }
 
-/* profile.component.scss */
 .menu {
     --padding-top: 0;
     --padding-bottom: 0;
@@ -61,11 +65,6 @@ img{
     margin: 0;
   }
   
-  .card {
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
   .card-body {
     padding: 20px;
   }
@@ -81,7 +80,7 @@ img{
   .display-value {
     padding: 8px;
     background-color: #f8f9fa;
-    border: 1px solid #ddd;
+    // border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
   }
@@ -91,6 +90,56 @@ img{
     --padding-end: 0.5rem;
   }
 
- 
+  .img-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+  }
+
+  .menu {
+    --width: 250px;
+    --background: #1c1c1c; 
+    color: white;
+  }
   
+  ion-toolbar {
+    --background: #272727; 
+  }
+  
+  ion-title h2 {
+    color: #ffffff; 
+    font-size: 24px; 
+    margin: 0;
+    padding: 10px 0;
+  }
+  
+  .action-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .ion-btn {
+    --padding-start: 20px;
+    --padding-end: 20px;
+    --border-radius: 25px;
+    --background: #353535; 
+    --color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .ion-btn:hover {
+    --background: #4a4a4a; 
+    transition: background-color 0.3s ease;
+  }
+  
+  #logout-btn {
+    --background: #d9534f; 
+  }
+  
+  #logout-btn:hover {
+    --background: #c9302c; 
+  }
   

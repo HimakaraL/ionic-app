@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -18,29 +19,44 @@ export class LoginComponent  implements OnInit {
   constructor(
     private http: HttpClient,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private toastController: ToastController
   ) { }
 
   ngOnInit() {
     //form initializing
     this.loginForm = this.formBuilder.group({
-      email: null,
-      password: null,
+      email: [null, [Validators.required, Validators.email]], //validating
+      password: [null, [Validators.required]],
     });
   }
 
   //Login
   handleLogin(){
+    if(this.loginForm.valid){
     this.http.post(this.URL, this.loginForm.value).subscribe(
       (response: any) => {
-        console.log('Login successful', response);
+        this.presentToast('Login Successful!');
         localStorage.setItem('token', response.token);
-        alert('Success login');
         this.router.navigate(['profile']); // redirect to home after registration
       },
       (error) => {
         console.error('Error occurred during registration', error);
+        this.presentToast('Invalid inputs!');
       }
     );
+  } else {
+    console.log('Check credentials!');
+    this.presentToast('Invalid inputs!');
+  }
+  }
+
+  async presentToast(message: string){
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000,
+      position: 'bottom'
+    });
+    await toast.present();
   }
 }
