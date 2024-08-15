@@ -1,0 +1,96 @@
+.menu-btn{
+    margin-bottom: 15%;
+}
+
+.card-header{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    max-width: 50%;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .row {
+    margin-bottom: 1rem;
+  }
+  
+  .font-weight-bold {
+    font-weight: bold;
+  }
+  
+  .display-value {
+    padding: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+/* profile.component.scss */
+.menu {
+    --padding-top: 0;
+    --padding-bottom: 0;
+  }
+  
+  .ion-content {
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-top: 0;
+    --padding-bottom: 0;
+  }
+  
+  .action-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+  }
+  
+  .card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .row {
+    margin-bottom: 1rem;
+  }
+  
+  .font-weight-bold {
+    font-weight: bold;
+  }
+  
+  .display-value {
+    padding: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  ion-button {
+    --padding-start: 0.5rem;
+    --padding-end: 0.5rem;
+  }
+
+ 
+  
+  

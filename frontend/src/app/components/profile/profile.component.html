@@ -1,3 +1,76 @@
-<p>
-  profile works!
-</p>
+<ion-menu contentId="main-content" class="menu">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Profile Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="action-btn-group">
+      <ion-button shape="round" expand="full" color="dark" routerLink="/editProfile">Edit Profile</ion-button>
+      <ion-button shape="round" expand="full" color="dark" routerLink="/login">Logout</ion-button>
+    </div>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-content class="ion-padding">
+    <ion-menu-toggle>
+      <ion-button color="medium" class="menu-btn">
+        <ion-icon name="menu"></ion-icon>
+      </ion-button>
+    </ion-menu-toggle>
+    <div class="container">
+      <div class="card mb-4">
+        <div class="card-header">
+          <img src="../../../assets/user.png" alt="user" />
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <p class="font-weight-bold">Full Name</p>
+            </div>
+            <div class="col-sm-9">
+              <div class="display-value">
+                {{ userProfile?.first_name }} {{ userProfile?.last_name }}
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <p class="font-weight-bold">Email</p>
+            </div>
+            <div class="col-sm-9">
+              <div class="display-value">
+                {{ userProfile?.email }}
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <p class="font-weight-bold">Status</p>
+            </div>
+            <div class="col-sm-9">
+              <div class="display-value">
+                {{ userProfile?.status }}
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row mb-3">
+            <div class="col-sm-3">
+              <p class="font-weight-bold">Mobile</p>
+            </div>
+            <div class="col-sm-9">
+              <div class="display-value">
+                {{ userProfile?.phone_no }}
+              </div>
+            </div>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</div>

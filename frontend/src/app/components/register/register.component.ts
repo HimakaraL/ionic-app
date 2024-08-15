@@ -9,8 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
+
+  //declaring as a form-group
   regForm!: FormGroup;
 
+  //backend api endpoint
   private URL = 'http://127.0.0.1:8000/api/register';
 
   constructor(
@@ -20,6 +23,7 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    //form initializing
     this.regForm = this.formBuilder.group({
       first_name: null,
       last_name: null,
@@ -30,13 +34,15 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  //Register
   handleRegister() {
+    //post request
     this.http.post(this.URL, this.regForm.value).subscribe(
       (response) => {
         console.log(this.regForm);
         console.log('Registration successful', response);
         alert('Success register');
-        this.router.navigate(['/']); // Redirect to home after registration
+        this.router.navigate(['/']); // redirect to home after registration
       },
       (error) => {
         console.error('Error occurred during registration', error);
