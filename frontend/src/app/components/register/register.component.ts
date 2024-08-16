@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
       email: [null, [Validators.required, Validators.email]], //an email validating
       password: [null, [Validators.required]],
       status: [null, [Validators.required]],
-      phone_no: [null, [Validators.required]],  //check as a 10 digit number
+      phone_no: [null, [Validators.required, Validators.pattern(/^\d{10}$/)]],  //check as a 10 digit number
     });
   }
 

@@ -77,7 +77,7 @@
             <hr />
             <div class="row mb-3">
               <div class="col-sm-3">
-                <p class="font-weight-bold">Status</p>
+                <p class="font-weight-bold">Marital Status</p>
               </div>
               <div class="col-sm-9">
                 <div class="display-value">
@@ -148,7 +148,7 @@
             <hr />
             <div class="row mb-3">
               <div class="col-sm-3">
-                <p class="font-weight-bold">Status</p>
+                <p class="font-weight-bold">Marital Status</p>
               </div>
               <div class="col-sm-9">
                 <input
@@ -172,7 +172,13 @@
                   [(ngModel)]="userProfile.phone_no"
                   placeholder="Mobile Number"
                   name="phone_no"
+                  #phoneNo = "ngModel"
+                  required  
+                  [pattern]="phonePattern" 
                 />
+                <div *ngIf="phoneNo.invalid" class="text-danger">
+                  <small *ngIf="phoneNo.errors?.['pattern']">Enter a valid 10 digit Number</small>
+                </div>
               </div>
             </div>
             <hr />

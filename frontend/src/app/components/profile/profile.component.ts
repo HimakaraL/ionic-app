@@ -20,6 +20,7 @@ export class ProfileComponent implements OnInit {
   token: string | null = null;
   userProfile: any = {}; // as an empty object
   selectedOption: string = 'profile'; // default option
+  phonePattern: string = "^\\d{10}$";
 
   constructor(
     private http: HttpClient,
