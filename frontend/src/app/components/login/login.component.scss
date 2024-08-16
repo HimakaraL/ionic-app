@@ -37,5 +37,23 @@
     width: 100%;
     max-width: 200px;
     margin-top: 5%;
+    margin-bottom: 3%;
+  }
+  
+  ion-header {
+    --background: white; 
+    --border-color: transparent; 
+    --ion-toolbar-background: white;
+    margin-top: 10%;
+  }
+  
+  ion-toolbar {
+    box-shadow: none; 
+    --padding-top: 0px; 
+    --margin-top: 0px; 
+  }
+
+  ion-content {
+    --background: linear-gradient(135deg, rgba(0, 204, 204, 0.3) 0%, rgba(0, 51, 102, 0.2) 100%);
   }
   
