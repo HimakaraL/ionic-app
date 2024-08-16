@@ -1,4 +1,4 @@
-<ion-menu contentId="main-content" class="menu">
+<ion-menu contentId="main-content" class="menu" >
   <ion-header>
     <ion-toolbar>
       <ion-title><h2>Menu</h2></ion-title>
@@ -7,28 +7,28 @@
   <ion-content class="ion-padding">
     <div class="action-btn-group">
       <ion-button
-      class="ion-btn"
+        class="ion-btn"
         shape="round"
         expand="full"
-        fill="clear"
+        fill="solid"
         color="dark"
         (click)="setOption('profile')"
         ><h3>Info</h3></ion-button
       >
       <ion-button
-      class="ion-btn"
+        class="ion-btn"
         shape="round"
         expand="full"
-        fill="clear"
+        fill="solid"
         color="dark"
         (click)="setOption('edit')"
         ><h3>Manage</h3></ion-button
       >
       <ion-button
-      class="ion-btn"
+        class="ion-btn"
         id="logout-btn"
         shape="round"
-        fill="clear"
+        fill="solid"
         expand="full"
         color="dark"
         (click)="presentLogoutAlert()"
@@ -51,8 +51,8 @@
         <div class="img-container">
           <img src="../../../assets/user.png" alt="user" />
         </div>
-        <div class="card mb-4">
-          <div class="card-body">
+        <div class="card mb-4" style="background-color: transparent; border-width: 0;">
+          <div class="card-body" style="background: linear-gradient(135deg, rgba(0, 204, 204, 0.5) 0%, rgba(0, 51, 102, 0.5) 100%); border-radius: 5%;">
             <div class="row mb-3">
               <div class="col-sm-3">
                 <p class="font-weight-bold">Full Name</p>
@@ -103,12 +103,12 @@
     </div>
 
     <div *ngIf="selectedOption === 'edit'">
-      <div style="display: flex; justify-content: center;">
+      <div size="large" style="display: flex; justify-content: center">
         <h1>Customize Your Profile</h1>
       </div>
       <div class="container">
-        <div class="card mb-4">
-          <div class="card-body">
+        <div class="card mb-4" style="background-color: transparent; border-width: 0;">
+          <div class="card-body" style="background: linear-gradient(135deg, rgba(0, 204, 204, 0.5) 0%, rgba(0, 51, 102, 0.5) 100%); border-radius: 5%;">
             <div class="row mb-3">
               <div class="col-sm-3">
                 <p class="font-weight-bold">Full Name</p>
@@ -172,12 +172,14 @@
                   [(ngModel)]="userProfile.phone_no"
                   placeholder="Mobile Number"
                   name="phone_no"
-                  #phoneNo = "ngModel"
-                  required  
-                  [pattern]="phonePattern" 
+                  #phoneNo="ngModel"
+                  required
+                  [pattern]="phonePattern"
                 />
                 <div *ngIf="phoneNo.invalid" class="text-danger">
-                  <small *ngIf="phoneNo.errors?.['pattern']">Enter a valid 10 digit Number</small>
+                  <small *ngIf="phoneNo.errors?.['pattern']"
+                    >Enter a valid 10 digit Number</small
+                  >
                 </div>
               </div>
             </div>
@@ -186,7 +188,7 @@
             <div class="row">
               <div style="display: flex; justify-content: center">
                 <ion-button
-                style="width: 35%"
+                  style="width: 35%;"
                   shape="round"
                   expand="full"
                   color="warning"
