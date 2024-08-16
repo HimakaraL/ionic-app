@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
     this.http.post(this.URL, this.regForm.value).subscribe(
       (response) => {
         this.presentToast('Registration Succesful!');
-        this.router.navigate(['/']); // redirect to home after registration
+        this.router.navigate(['']); // redirect to home after registration
       },
       (error) => {
         this.presentToast('Invalid form inputs!');
@@ -64,4 +64,7 @@ export class RegisterComponent implements OnInit {
     await toast.present();
   }
 
+  navigateToLogin(){
+    this.router.navigate(['']);
+  }
 }

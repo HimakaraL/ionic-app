@@ -1,6 +1,6 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="register-body">
   <ion-header>
-    <ion-title size="large" style="display: flex; justify-content: center">
+    <ion-title size="large" style="display: flex; justify-content: center; margin-top: 10%;">
       Register
     </ion-title>
   </ion-header>
@@ -82,7 +82,7 @@
     <div>
       <p>
         Have an account?
-        <span style="color: blue"><a routerLink="/">Log in</a></span>
+        <span style="color: blue"><a (click)="navigateToLogin()">Log in</a></span>
       </p>
     </div>
   </div>

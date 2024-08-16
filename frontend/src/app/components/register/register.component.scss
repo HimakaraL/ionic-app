@@ -39,20 +39,7 @@
     margin-top: 5%;
   }
   
-  ion-header {
-    --background: white; 
-    --border-color: transparent; 
-    --ion-toolbar-background: white;
-    margin-top: 10%;
-  }
-  
-  ion-toolbar {
-    box-shadow: none; 
-    --padding-top: 0px; 
-    --margin-top: 0px; 
-  }
-
-  ion-content {
+ .register-body {
     --background: linear-gradient(135deg, rgba(58, 255, 255, 0.3) 0%, rgba(54, 149, 244, 0.5) 100%);
   }
   

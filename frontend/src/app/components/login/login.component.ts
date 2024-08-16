@@ -59,4 +59,9 @@ export class LoginComponent  implements OnInit {
     });
     await toast.present();
   }
+
+  navigateToRegister(){
+    this.router.navigate(['register']);
+  }
+
 }

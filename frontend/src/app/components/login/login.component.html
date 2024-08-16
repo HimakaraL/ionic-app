@@ -1,6 +1,6 @@
-<ion-content class="body" [fullscreen]="true">
+<ion-content class="login-body" [fullscreen]="true">
   <ion-header>
-      <ion-title size="large" style="display: flex; justify-content: center">
+      <ion-title size="large" style="display: flex; justify-content: center; margin-top: 10%;">
         Welcome!
       </ion-title>
       <div style="display: flex; justify-content: center;">
@@ -45,7 +45,7 @@
       </div>
     </form>
     <div>
-          <p>Don't have an account? <span style="color: blue;"><a routerLink="/register">Sign up</a></span></p>
+          <p>Don't have an account? <span style="color: blue;"><a (click)="navigateToRegister()">Sign up</a></span></p>
     </div>
   </div>
 </ion-content>

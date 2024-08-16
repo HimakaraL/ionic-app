@@ -40,7 +40,7 @@ export class ProfileComponent implements OnInit {
     } else {
       // redirect to login if no token found
       // alert('No token found, please log in');
-      this.router.navigate(['/']);
+      this.router.navigate(['']);
     }
   }
 
@@ -65,7 +65,7 @@ export class ProfileComponent implements OnInit {
       (error) => {
         console.error('Error fetching user profile', error);
         this.presentToast('Error Occured!');
-        this.router.navigate(['/']);
+        this.router.navigate(['']);
       }
     );
   }
@@ -81,12 +81,12 @@ export class ProfileComponent implements OnInit {
     this.http.put(this.URLupdate, this.userProfile, { headers }).subscribe(
       (response: any) => {
         this.presentToast('Update Successful!');
-        this.router.navigate(['/profile']);
+        this.router.navigate(['profile']);
       },
       (error) => {
         console.error('Error fetching user profile', error);
         this.presentToast('Error Occured!');
-        this.router.navigate(['/']);
+        this.router.navigate(['']);
       }
     );
   }
@@ -101,7 +101,7 @@ export class ProfileComponent implements OnInit {
   logout() {
     // remove token and redirect
     localStorage.removeItem('token');
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
   }
 
   deleteProfile(){
@@ -115,12 +115,12 @@ export class ProfileComponent implements OnInit {
       (response: any) => {
         console.log('User profile deleted successfully');
         localStorage.removeItem('token');
-        this.router.navigate(['/']);
+        this.router.navigate(['']);
       },
       (error) => {
         console.error('Error fetching user profile', error);
         this.presentToast('Error Occured!');
-        this.router.navigate(['/']);
+        this.router.navigate(['']);
       }
     );
   }
