@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
     } else {
       // redirect to login if no token found
       // alert('No token found, please log in');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/']);
     }
   }
 
@@ -64,7 +64,7 @@ export class ProfileComponent implements OnInit {
       (error) => {
         console.error('Error fetching user profile', error);
         this.presentToast('Error Occured!');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       }
     );
   }
@@ -85,7 +85,7 @@ export class ProfileComponent implements OnInit {
       (error) => {
         console.error('Error fetching user profile', error);
         this.presentToast('Error Occured!');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       }
     );
   }
@@ -100,7 +100,7 @@ export class ProfileComponent implements OnInit {
   logout() {
     // remove token and redirect
     localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 
   deleteProfile(){

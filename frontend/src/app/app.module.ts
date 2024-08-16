@@ -11,7 +11,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { HomePage } from './components/home/home.page';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';  // <-- use provideHttpClient
@@ -19,7 +18,6 @@ import { provideHttpClient } from '@angular/common/http';  // <-- use provideHtt
 @NgModule({
   declarations: [
     AppComponent,
-    HomePage,
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
