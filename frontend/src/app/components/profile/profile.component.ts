@@ -20,7 +20,8 @@ export class ProfileComponent implements OnInit {
   token: string | null = null;
   userProfile: any = {}; // as an empty object
   selectedOption: string = 'profile'; // default option
-  phonePattern: string = "^\\d{10}$";
+  phonePattern: string = "^\\d{10}$"; // phone number validating pattern
+  emailPattern: string = "^[a-zA-Z0-9._%+-]+@gmail\\.com$";
 
   constructor(
     private http: HttpClient,
