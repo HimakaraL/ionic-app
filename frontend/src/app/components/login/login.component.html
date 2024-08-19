@@ -19,28 +19,15 @@
     <div class="form-login-div">
       <form class="reg-form" [formGroup]="loginForm" (ngSubmit)="handleLogin()">
         <div>
-          <ion-input
-            type="email"
-            fill="solid"
-            label="Email"
-            labelPlacement="floating"
-            helperText="Enter a valid email"
-            errorText="Invalid email"
-            formControlName="email"
-            name="email"
-            required
-          ></ion-input>
-          <ion-input
-            type="password"
-            fill="solid"
-            label="Password"
-            labelPlacement="floating"
-            helperText="Enter password"
-            errorText="Invalid password"
-            formControlName="password"
-            name="password"
-            required
-          ></ion-input>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="form2Example1">Email address</label>
+            <input type="email" id="form2Example1" class="form-control" formControlName="email" helperText="Enter a valid email" errorText="Invalid email" required/>
+          </div>
+        
+          <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="form2Example2">Password</label>
+            <input type="password" id="form2Example2" class="form-control" formControlName="password" required  helperText="Enter password" errorText="Invalid password" required/>
+          </div>
         </div>
         <div class="button-group">
           <button type="submit" class="btn btn-dark">Login</button>
