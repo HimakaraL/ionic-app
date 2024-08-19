@@ -1,11 +1,14 @@
 <ion-content class="login-body" [fullscreen]="true">
   <ion-header>
-      <ion-title size="large" style="display: flex; justify-content: center; margin-top: 10%;">
-        Welcome!
-      </ion-title>
-      <div style="display: flex; justify-content: center;">
-        <h3>Sign in to your account</h3>
-      </div>
+    <ion-title
+      size="large"
+      style="display: flex; justify-content: center; margin-top: 10%"
+    >
+      Welcome!
+    </ion-title>
+    <div style="display: flex; justify-content: center">
+      <h3>Sign in to your account</h3>
+    </div>
   </ion-header>
 
   <div id="container">
@@ -13,39 +16,45 @@
       <img src="../../../assets/login.png" />
     </div>
 
-    <form class="reg-form" [formGroup]="loginForm" (ngSubmit)="handleLogin()">
-      <div>
-        <ion-input
-          type="email"
-          fill="solid"
-          label="Email"
-          labelPlacement="floating"
-          helperText="Enter a valid email"
-          errorText="Invalid email"
-          formControlName="email"
-          name="email"
-          required
-        ></ion-input>
-        <ion-input
-          type="password"
-          fill="solid"
-          label="Password"
-          labelPlacement="floating"
-          helperText="Enter password"
-          errorText="Invalid password"
-          formControlName="password"
-          name="password"
-          required
-        ></ion-input>
-      </div>
-      <div class="button-group">
-        <button type="submit" class="btn btn-dark">
-          Login
-        </button>
-      </div>
-    </form>
+    <div class="form-login-div">
+      <form class="reg-form" [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+        <div>
+          <ion-input
+            type="email"
+            fill="solid"
+            label="Email"
+            labelPlacement="floating"
+            helperText="Enter a valid email"
+            errorText="Invalid email"
+            formControlName="email"
+            name="email"
+            required
+          ></ion-input>
+          <ion-input
+            type="password"
+            fill="solid"
+            label="Password"
+            labelPlacement="floating"
+            helperText="Enter password"
+            errorText="Invalid password"
+            formControlName="password"
+            name="password"
+            required
+          ></ion-input>
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn btn-dark">Login</button>
+        </div>
+      </form>
+    </div>
+  
     <div>
-          <p>Don't have an account? <span style="color: blue;"><a (click)="navigateToRegister()">Sign up</a></span></p>
+      <p>
+        Don't have an account?
+        <span style="color: blue"
+          ><a (click)="navigateToRegister()">Sign up</a></span
+        >
+      </p>
     </div>
   </div>
 </ion-content>

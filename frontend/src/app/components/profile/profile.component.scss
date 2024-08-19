@@ -45,11 +45,6 @@ img{
     border-radius: 4px;
     font-size: 1rem;
   }
-
-.menu {
-    --padding-top: 0;
-    --padding-bottom: 0;
-  }
   
   .ion-content {
     --padding-start: 0;
@@ -99,30 +94,6 @@ img{
   #main-content ion-content{
     --background: linear-gradient(90deg, rgb(140, 251, 183) 0%, rgb(134, 251, 208) 35%, rgb(121, 255, 233) 100%);
   }
-  
- 
-.menu {
-  --width: 60%;
-  // --background: #fcfcfc !important; 
-  // color: rgb(232, 24, 24) !important; 
-}
-
-ion-toolbar {
-  --background: #272727 !important; 
-}
-
-ion-title h2 {
-  color: #ffffff !important; 
-  font-size: 24px !important;
-  margin: 0;
-  padding: 10px 0;
-}
-
-.action-btn-group {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
 
 .ion-btn {
   --padding-start: 20px !important;
